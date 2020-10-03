@@ -4,7 +4,8 @@ FROM php:7.4-fpm
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install software-properties-common \
+RUN apt-get update \
+    && apt-get install software-properties-common \
     && add-apt-repository ppa:ondrej/php
 
 # Install selected extensions and other stuff
