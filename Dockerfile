@@ -15,7 +15,7 @@ RUN apt-get update \
 
 # Install mysqldump
 RUN apt-get update \
-    && apt-get -y install mysql-client
+    && apt-get -y install mariadb-client
 
 # Install sendail
 RUN apt-get update \
