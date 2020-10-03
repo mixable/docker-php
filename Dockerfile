@@ -43,11 +43,11 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 ENV PATH=$PATH:/root/composer/vendor/bin COMPOSER_ALLOW_SUPERUSER=1
 
 # Install zsh
-RUN apt-get -y install zsh
+RUN apt-get update && apt-get -y install zsh
 # Install mysqldump
-RUN apt-get -y install mariadb-client
+RUN apt-get update && apt-get -y install mariadb-client
 # Install sendail
-RUN apt-get -y install sendmail
+RUN apt-get update && apt-get -y install sendmail
 
 RUN pecl install mcrypt \
     && docker-php-ext-enable mcrypt
