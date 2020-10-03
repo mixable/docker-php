@@ -48,8 +48,11 @@ RUN apt-get update && apt-get -y install zsh
 RUN apt-get update && apt-get -y install mariadb-client
 # Install sendail
 RUN apt-get update && apt-get -y install sendmail
-
-RUN pecl install mcrypt \
+# Install mcrypt
+RUN apt-get update \
+    && apt-get -y install libmcrypt-dev \
+    && pecl install mcrypt \
     && docker-php-ext-enable mcrypt
+# Install xdebug
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
