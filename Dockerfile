@@ -42,6 +42,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
     && ln -s $(composer config --global home) /root/composer
 ENV PATH=$PATH:/root/composer/vendor/bin COMPOSER_ALLOW_SUPERUSER=1
 
+# Install SSH
+RUN apt-get update && apt-get -y install openssh-client
+RUN apt-get update && apt-get -y install sshpass
 # Install zsh
 RUN apt-get update && apt-get -y install zsh
 # Install mysqldump
