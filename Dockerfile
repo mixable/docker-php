@@ -42,6 +42,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
     && ln -s $(composer config --global home) /root/composer
 ENV PATH=$PATH:/root/composer/vendor/bin COMPOSER_ALLOW_SUPERUSER=1
 
+# Install phpdgb
+RUN apt-get update && apt-get -y install php-phpdbg
 # Install SSH
 RUN apt-get update && apt-get -y install openssh-client
 RUN apt-get update && apt-get -y install sshpass
@@ -49,7 +51,7 @@ RUN apt-get update && apt-get -y install sshpass
 RUN apt-get update && apt-get -y install zsh
 # Install mysqldump
 RUN apt-get update && apt-get -y install mariadb-client
-# Install sendail
+# Install sendmail
 RUN apt-get update && apt-get -y install sendmail
 # Install mcrypt
 RUN apt-get update \
