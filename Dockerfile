@@ -43,7 +43,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 ENV PATH=$PATH:/root/composer/vendor/bin COMPOSER_ALLOW_SUPERUSER=1
 
 # Install phpdgb
-RUN apt-get update && apt-get -y install php-phpdbg
+RUN apt-get update && apt-get -y install php7.4-phpdbg
 # Install SSH
 RUN apt-get update && apt-get -y install openssh-client
 RUN apt-get update && apt-get -y install sshpass
