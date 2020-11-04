@@ -51,6 +51,8 @@ RUN apt-get update && apt-get -y install zsh
 RUN apt-get update && apt-get -y install mariadb-client
 # Install sendmail
 RUN apt-get update && apt-get -y install sendmail
+# Install rsync
+RUN apt-get update && apt-get -y install rsync
 # Install mcrypt
 RUN apt-get update \
     && apt-get -y install libmcrypt-dev \
