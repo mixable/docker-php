@@ -61,3 +61,6 @@ RUN apt-get update \
 # Install xdebug
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
+# Install pcov
+RUN pecl install pcov \
+    && docker-php-ext-enable pcov
