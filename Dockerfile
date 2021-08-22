@@ -1,5 +1,5 @@
 # see https://github.com/chialab/docker-php
-FROM php:7.3-fpm
+FROM php:8.0-fpm
 LABEL maintainer="dev@chialab.io"
 
 # Download script to install PHP extensions and dependencies
