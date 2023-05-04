@@ -1,3 +1,3 @@
-# docker-php8.0
+# docker-php8.2
 
-A Dockerfile with PHP 8.0 and all important extensions.
+A Dockerfile with PHP 8.2 and all important extensions.
