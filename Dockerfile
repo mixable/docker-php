@@ -12,6 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
       curl \
       git \
       zip unzip \
+  	  imagemagick \
     && install-php-extensions \
       bcmath \
       bz2 \
@@ -19,6 +20,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
       exif \
       gd \
       intl \
+	  imagick \
       ldap \
       memcached \
       mysqli \
