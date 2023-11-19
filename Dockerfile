@@ -12,7 +12,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
       curl \
       git \
       zip unzip \
-  	  imagemagick \
     && install-php-extensions \
       bcmath \
       bz2 \
@@ -20,7 +19,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -q \
       exif \
       gd \
       intl \
-	  imagick \
       ldap \
       memcached \
       mysqli \
@@ -61,6 +59,11 @@ RUN apt-get update \
     && apt-get -y install libmcrypt-dev \
     && pecl install mcrypt \
     && docker-php-ext-enable mcrypt
+# Install imagick
+RUN apt-get update \
+    && apt-get -y install libmagickwand-dev libmagickcore-dev \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick
 # Install xdebug
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
